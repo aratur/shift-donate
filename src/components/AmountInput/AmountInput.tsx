@@ -26,10 +26,6 @@ const AmountInput = (props: AmountInputProps) => {
     }
 
     handleChange(inputValue);
-    // if (cleanValue.slice(-1) === '.') cleanValue += '01';
-    // if (cleanValue.slice(-2) === '.0')
-    //   cleanValue = cleanValue.replace('.0', '.10');
-    // console.log(inputValue, cleanValue, parsedValue);
   };
 
   useEffect(() => {
@@ -59,6 +55,7 @@ const AmountInput = (props: AmountInputProps) => {
         ref={ref}
         className={style.amount_input__input}
         type="text"
+        inputMode="decimal"
         name="donation_amount"
         id="donation_amount"
         placeholder="0.00"
