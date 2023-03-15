@@ -1,0 +1,21 @@
+@use '../utils/' as u;
+
+.navbar {
+  display: none;
+  @include u.media-desktop {
+    display: block;
+  }
+  position: relative;
+  width: 100vw;
+  height: 5rem;
+  background-color: var(--clr-primary-light);
+  color: var(--clr-primary-dark);
+
+  img {
+    position: absolute;
+    width: 146.38px;
+    height: 2rem;
+    left: 2.5rem;
+    top: 1.5rem;
+  }
+}

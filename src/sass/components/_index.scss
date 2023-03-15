@@ -1,1 +1,8 @@
-// @forward './component';
+@forward './navbar';
+@forward './card__container';
+@forward './card__header';
+@forward './card__content';
+@forward './card__content__summary';
+@forward './card__content__actions';
+@forward './btn_close';
+@forward './btn_cont_cancel';

@@ -1,0 +1,38 @@
+@use '../utils/' as u;
+
+.btn_close {
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: none;
+  background-color: transparent;
+  width: 2.5rem;
+  height: 2.5rem;
+
+  cursor: pointer;
+
+  &:hover {
+    // but this will work with other bg as well
+    background-color: hsla(0, 0%, 0%, 0.05);
+    border-radius: 10px;
+  }
+
+  &:active {
+    transform: scale(0.85);
+    transition: transform 100ms ease-out;
+  }
+
+  img {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  @include u.media-desktop {
+    display: none;
+  }
+}

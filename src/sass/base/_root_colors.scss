@@ -1,7 +1,18 @@
 @use './colors' as *;
 
 :root {
-  // primary colors
-  --clr-white: #{$clr-white};
-  --clr-dark: #{$clr-dark};
+  /* White */
+  --clr-primary-light: #{$clr-primary-light};
+  /* Midnight Purple */
+  --clr-primary-dark: #{$clr-primary-dark};
+
+  --clr-secondary-light: #{$clr-secondary-light};
+  /* Blue Gray */
+  --clr-secondary-dark: #{$clr-secondary-dark};
+  /* Salmon */
+  --clr-contrast-light: #{$clr-contrast-light};
+  /* stroke */
+  --clr-border-light: #{$clr-border-light};
+  /* Purple Gray */
+  --clr-tertiary-dark: #{$clr-tertiary-dark};
 }

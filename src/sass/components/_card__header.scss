@@ -1,0 +1,43 @@
+@use '../utils/' as u;
+
+.card__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: var(--clr-contrast-light);
+  column-gap: 20px;
+  row-gap: 1rem;
+  padding-inline: 1.5rem;
+  padding-block: 1.5rem 1.75rem;
+
+  @include u.media-desktop {
+    flex-direction: row;
+    padding-inline: 2.5rem;
+    padding-block: 2rem 1.5rem;
+  }
+
+  img {
+    width: 72px;
+    aspect-ratio: 1 /1;
+  }
+}
+
+.card__header__description {
+  h1 {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
+    line-height: 120%;
+    margin-bottom: 4px;
+    font-size: 1.5rem;
+    @include u.media-desktop {
+      font-size: 2rem;
+    }
+  }
+  p {
+    color: var(--clr-tertiary-dark);
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    line-height: 20px;
+  }
+}

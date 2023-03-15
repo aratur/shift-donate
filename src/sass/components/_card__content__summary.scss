@@ -1,0 +1,65 @@
+@use '../utils/' as u;
+
+.card__content__summary {
+  border: 1px solid var(--clr-border-light);
+  border-radius: 4px;
+
+  @include u.media-desktop {
+    border: none;
+  }
+
+  .card__content__summary__total {
+    padding-block: 1.5rem;
+    padding-inline: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .total_label {
+      // font-family: 'Work Sans', sans-serif; defined on body
+      font-weight: 500;
+      line-height: 120%;
+      color: var(--clr-secondary-dark);
+      @include u.media-desktop {
+        font-size: 20px;
+      }
+    }
+
+    .total_amount {
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 1.5rem;
+      line-height: 120%;
+      color: var(--clr-tertiary-dark);
+      @include u.media-desktop {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  .card__content__summary__info_box {
+    background: var(--clr-secondary-light);
+    border-radius: 5px;
+    padding-block: 1.5rem;
+    padding-inline: 1rem;
+
+    // font-family: 'Work Sans' is set on body
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 140%;
+
+    color: var(--clr-secondary-dark);
+
+    text-align: center;
+    @include u.media-desktop {
+      text-align: left;
+    }
+
+    em {
+      font-family: 'Inter', sans-serif;
+      font-style: normal;
+      font-weight: 700;
+    }
+  }
+}

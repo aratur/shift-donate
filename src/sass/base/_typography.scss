@@ -1,14 +1,32 @@
 @use './colors' as c;
 
-:root {
-  font-family: 'Roboto', sans-serif;
+body {
+  font-family: 'Work Sans', sans-serif;
   line-height: 1.5;
-  color: c.$clr-dark;
+  color: var(--clr-primary-dark);
 }
 
-h1,
-h2,
-h3,
-h4 {
-  font-family: 'DM Serif Display', serif;
-}
+// list of fonts used
+// // Amount
+// font-family: 'Inter', sans-serif;
+// font-weight: 700;
+
+// // set up your donation
+// font-family: 'Inter', sans-serif;
+// font-weight: 400;
+
+// // Button , h2 the giving block
+// font-family: 'Work Sans', sans-serif;
+// font-weight: 600;
+
+// // Total amount, input_label
+// font-family: 'Work Sans', sans-serif;
+// font-weight: 500;
+
+// // Info box/ year
+// font-family: 'Work Sans', sans-serif;
+// font-weight: 400;
+
+// Month
+// font-family: 'Rubik', sans-serif;
+// font-weight: 500;

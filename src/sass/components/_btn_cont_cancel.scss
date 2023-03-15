@@ -1,0 +1,50 @@
+@use '../utils/' as u;
+
+.btn {
+  margin: 0.5rem;
+  // adjusted for inline margins
+  width: calc(100% - 1rem);
+  height: 52px;
+  border: none;
+  border-radius: 5px;
+  font-family: 'Work Sans', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 20px;
+  text-align: center;
+  cursor: pointer;
+
+  @include u.media-desktop {
+    max-width: 238.5px;
+  }
+}
+
+.btn__continue {
+  background: var(--clr-primary-dark);
+  color: var(--clr-primary-light);
+  &:hover {
+    background-color: #645d93;
+  }
+  &:active {
+    background-color: #241e47;
+  }
+  transition: background-color 100ms;
+}
+
+.btn__cancel {
+  display: none;
+  border: 1px solid var(--clr-tertiary-dark);
+  background-color: var(--clr-primary-light);
+  &:hover {
+    background-color: rgba(178, 167, 244, 0.1);
+  }
+  &:active {
+    background: rgba(178, 167, 244, 0.25);
+  }
+  transition: background-color 100ms;
+
+  @include u.media-desktop {
+    display: block;
+  }
+}

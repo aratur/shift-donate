@@ -1,0 +1,34 @@
+@use '../utils/' as u;
+
+.card__content {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+
+  padding-top: 2rem;
+  padding-bottom: 50px;
+  @include u.media-desktop {
+    padding-bottom: 2rem;
+  }
+
+  .card__content_ads_row_gap {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.5rem;
+    @include u.media-desktop {
+      // 2rem is the distance in Figma
+      // 1.5rem is the existing padding on the summary
+      row-gap: calc(2rem - 1.5rem);
+    }
+
+    .card__content__donation {
+      display: flex;
+      flex-direction: column;
+      row-gap: 1rem;
+      @include u.media-desktop {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+  }
+}
