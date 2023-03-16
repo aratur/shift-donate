@@ -6,8 +6,7 @@ import MonthSelector, { useMonthSelector } from '../MonthSelector';
 import style from './card__content.module.scss';
 
 const CardContentMain = () => {
-  const montState = useMonthSelector();
-  const [monthSelectorState, setMonthSelectorState] = montState;
+  const [monthSelectorState, setMonthSelectorState] = useMonthSelector();
   const { monthName, noOfMonths, year } = monthSelectorState;
   const { amount, amountInputState } = useAmountInput();
 
