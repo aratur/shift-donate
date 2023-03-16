@@ -1,33 +1,35 @@
 import React, { useEffect, useRef, useState } from 'react';
 import style from './amount_input.module.scss';
 import AmountFormatter from './AmountFormatters';
+import { UseAmountInputState } from './useAmountInput';
 
 type AmountInputProps = {
   label: string;
-  amount: string;
-  handleChange: (newValue: string) => void;
+  useAmountInputState: UseAmountInputState;
 };
 
 const AmountInput = (props: AmountInputProps) => {
-  const { label, amount, handleChange } = props;
+  const { label, useAmountInputState } = props;
+  const [amount, setAmount] = useAmountInputState;
   const [formatter, setFormatter] = useState(
     () => AmountFormatter.formatAmountOutOfFocus
   );
 
-  const ref = useRef<HTMLInputElement>(null);
   const pattern = '^\\d{0,9}(\\.\\d{0,2})?$';
+  // if amount doesn't match regexp return unchanged
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     const { value: inputValue } = e.target;
 
     const regex = new RegExp(pattern, 'g');
     if (!regex.test(inputValue)) {
-      handleChange(amount);
+      setAmount(amount);
       return;
     }
 
-    handleChange(inputValue);
+    setAmount(inputValue);
   };
 
+  const ref = useRef<HTMLInputElement>(null);
   useEffect(() => {
     const { current } = ref;
     if (current) {
@@ -45,7 +47,7 @@ const AmountInput = (props: AmountInputProps) => {
         current.removeEventListener('focusout', onFocusOut);
       };
     }
-    return () => () => {};
+    return () => {};
   }, []);
 
   return (

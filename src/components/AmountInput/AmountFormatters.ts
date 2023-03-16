@@ -19,16 +19,14 @@ const formatAmountOutOfFocus = (value: string): string => {
 // if will be easier to modify amount behavior in future
 const formatAmountOnFocus = (value: string): string => value;
 
-const formatAmountInText = (value: string): string => {
-  const numValue = convertFromStringToNumber(value);
-
-  if (numValue === 0) return '$0.00';
+const formatAmountInText = (value: number): string => {
+  if (value === 0) return '$0.00';
   return new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD',
     maximumFractionDigits: 2,
     minimumFractionDigits: 0,
-  }).format(numValue);
+  }).format(value);
 };
 
 const AmountFormatter = {

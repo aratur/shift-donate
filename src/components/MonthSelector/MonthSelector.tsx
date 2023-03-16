@@ -13,16 +13,16 @@ type MonthSelectorProps = {
 const MonthSelector = (props: MonthSelectorProps) => {
   const { label, monthState, handleMonthChange } = props;
 
-  const getControllerFromProps = () =>
+  const createControllerFromProps = () =>
     new MonthSelectorController(new Date(monthState.year, monthState.month));
 
   const handleClickedLeft = () => {
-    const controller = getControllerFromProps();
+    const controller = createControllerFromProps();
     handleMonthChange(controller.decrement());
   };
 
   const handleClickedRight = () => {
-    const controller = getControllerFromProps();
+    const controller = createControllerFromProps();
     handleMonthChange(controller.increment());
   };
 
