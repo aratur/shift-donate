@@ -22,8 +22,8 @@
   justify-content: space-between;
   align-items: center;
 
-  padding: 12px;
-  min-height: 60px;
+  padding: 0.75rem;
+  min-height: 3.75rem;
 
   background-color: var(--clr-primary-light);
   border: 1px solid var(--clr-border-light);
@@ -56,13 +56,13 @@
       font-family: 'Rubik', sans-serif;
       font-weight: 500;
       font-size: 1rem;
-      line-height: 20px;
+      line-height: 1.25rem;
     }
 
     .date_switcher__date__year {
       font-family: 'Work Sans', sans-serif;
       font-weight: 400;
-      font-size: 12px;
+      font-size: 0.75rem;
       line-height: 1rem;
     }
   }

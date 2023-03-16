@@ -22,7 +22,7 @@
       line-height: 120%;
       color: var(--clr-secondary-dark);
       @include u.media-desktop {
-        font-size: 20px;
+        font-size: 1.25rem;
       }
     }
 
@@ -46,7 +46,7 @@
 
     // font-family: 'Work Sans' is set on body
     font-weight: 400;
-    font-size: 12px;
+    font-size: 0.75rem;
     line-height: 140%;
 
     color: var(--clr-secondary-dark);

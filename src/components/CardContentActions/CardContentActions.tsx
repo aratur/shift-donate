@@ -21,7 +21,7 @@ const CardContentActions = (props: CardContentActionsProps) => {
         variant="light"
         onClick={handleCancel}
       >
-        <span className="purple_gray_font">Cancel</span>
+        Cancel
       </ButtonDefault>
       <ButtonDefault variant="dark" onClick={handleContinue}>
         Continue

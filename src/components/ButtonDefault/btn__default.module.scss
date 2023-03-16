@@ -11,7 +11,7 @@
   font-style: normal;
   font-weight: 600;
   font-size: 1rem;
-  line-height: 20px;
+  line-height: 1.25rem;
   text-align: center;
   cursor: pointer;
 
@@ -33,7 +33,6 @@
 }
 
 .btn__light {
-  display: none;
   background-color: var(--clr-primary-light);
   color: var(--clr-tertiary-dark);
   border: 1px solid var(--clr-tertiary-dark);
@@ -44,8 +43,4 @@
     background: rgba(178, 167, 244, 0.25);
   }
   transition: background-color 100ms;
-
-  @include u.media-desktop {
-    display: block;
-  }
 }
