@@ -1,0 +1,14 @@
+@use '../../sass/utils/' as u;
+
+.card__content__actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .card__context__responsive_button {
+    display: none;
+    @include u.media-desktop {
+      display: block;
+    }
+  }
+}

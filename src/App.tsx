@@ -1,17 +1,13 @@
 import React from 'react';
-import CardContainer from './components/CardContainer';
-import CardContent from './components/CardContent';
-import CardHeader from './components/CardHeader';
+import Donate from './components/Donate';
+
 import Navbar from './components/Navbar';
 
 const App = () => (
   <>
     <Navbar />
     <main>
-      <CardContainer>
-        <CardHeader />
-        <CardContent />
-      </CardContainer>
+      <Donate />
     </main>
   </>
 );

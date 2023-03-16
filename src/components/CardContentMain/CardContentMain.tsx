@@ -1,10 +1,11 @@
-import React, { useCallback, useState } from 'react';
-import CardContentActions from './CardContentActions';
-import CardContentSummary from './CardContentSummary';
-import AmountInput, { AmountFormatter, useAmountInput } from './AmountInput';
-import MonthSelector, { useMonthSelector } from './MonthSelector';
+import React, { useCallback } from 'react';
+import CardContentActions from '../CardContentActions';
+import CardContentSummary from '../CardContentSummary';
+import AmountInput, { AmountFormatter, useAmountInput } from '../AmountInput';
+import MonthSelector, { useMonthSelector } from '../MonthSelector';
+import style from './card__content.module.scss';
 
-const CardContent = () => {
+const CardContentMain = () => {
   const montState = useMonthSelector();
   const [monthSelectorState, setMonthSelectorState] = montState;
   const { monthName, noOfMonths, year } = monthSelectorState;
@@ -24,9 +25,9 @@ const CardContent = () => {
   }, []);
 
   return (
-    <div className="card__content">
-      <div className="card__content_ads_row_gap">
-        <div className="card__content__donation">
+    <div className={style.card__content}>
+      <div className={style.card__content_ads_row_gap}>
+        <div className={style.card__content__donation}>
           <AmountInput
             label="I can donate"
             useAmountInputState={amountInputState}
@@ -51,4 +52,4 @@ const CardContent = () => {
   );
 };
 
-export default CardContent;
+export default CardContentMain;
