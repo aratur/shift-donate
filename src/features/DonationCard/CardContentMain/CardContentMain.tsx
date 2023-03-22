@@ -1,14 +1,21 @@
 import React, { useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
 import CardContentActions from '../CardContentActions';
 import CardContentSummary from '../CardContentSummary';
-import AmountInput, { AmountFormatter, useAmountInput } from '../AmountInput';
-import MonthSelector, { useMonthSelector } from '../MonthSelector';
+import AmountInput, {
+  AmountFormatter,
+  useAmountInput,
+} from '../../../components/AmountInput';
+import MonthSelector, {
+  useMonthSelector,
+} from '../../../components/MonthSelector';
 import style from './card__content.module.scss';
 
 const CardContentMain = () => {
   const [monthSelectorState, setMonthSelectorState] = useMonthSelector();
   const { monthName, noOfMonths, year } = monthSelectorState;
   const { amount, amountInputState } = useAmountInput();
+  const { t } = useTranslation('donationCard');
 
   // format total for rendering in content summary
   const total = AmountFormatter.formatAmountInText(amount * noOfMonths);
@@ -28,11 +35,11 @@ const CardContentMain = () => {
       <div className={style.card__content_ads_row_gap}>
         <div className={style.card__content__donation}>
           <AmountInput
-            label="I can donate"
+            label={t('canDonate')}
             useAmountInputState={amountInputState}
           />
           <MonthSelector
-            label="Every month until"
+            label={t('everyMonthUntil')}
             monthState={monthSelectorState}
             handleMonthChange={setMonthSelectorState}
           />

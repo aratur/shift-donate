@@ -32,6 +32,7 @@ const AmountInput = (props: AmountInputProps) => {
   const ref = useRef<HTMLInputElement>(null);
   useEffect(() => {
     const { current } = ref;
+  
     if (current) {
       const onFocusOut = () => {
         setFormatter(() => AmountFormatter.formatAmountOutOfFocus);

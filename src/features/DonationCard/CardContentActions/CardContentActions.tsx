@@ -1,7 +1,8 @@
 import React from 'react';
-import { close } from '../../assets';
-import ButtonClose from '../ButtonClose';
-import ButtonDefault from '../ButtonDefault';
+import { useTranslation } from 'react-i18next';
+import { close } from '../../../assets';
+import ButtonClose from '../../../components/UI/ButtonClose';
+import ButtonDefault from '../../../components/UI/ButtonDefault';
 import style from './card__content__actions.module.scss';
 
 type CardContentActionsProps = {
@@ -11,20 +12,21 @@ type CardContentActionsProps = {
 
 const CardContentActions = (props: CardContentActionsProps) => {
   const { handleCancel, handleContinue } = props;
+  const { t } = useTranslation('common');
   return (
     <div className={style.card__content__actions}>
       <ButtonClose onClick={handleCancel}>
-        <img src={close} alt="Cancel" />
+        <img src={close} alt={t('cancel') || 'cancel'} />
       </ButtonClose>
       <ButtonDefault
         className={style.card__context__responsive_button}
         variant="light"
         onClick={handleCancel}
       >
-        Cancel
+        {t('cancel')}
       </ButtonDefault>
       <ButtonDefault variant="dark" onClick={handleContinue}>
-        Continue
+        {t('continue')}
       </ButtonDefault>
     </div>
   );
