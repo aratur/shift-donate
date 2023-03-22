@@ -32,7 +32,7 @@
     line-height: 28px;
     color: var(--clr-tertiary-dark);
     &:focus {
-      border: 1px solid #423c66;
+      border: 1px solid var(--clr-input-focus);
       outline: none;
       border-radius: 4px;
     }
