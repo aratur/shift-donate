@@ -6,7 +6,7 @@ import AmountInput, { AmountFormatter } from '../../../components/AmountInput';
 import MonthSelector, {
   useMonthSelector,
 } from '../../../components/MonthSelector';
-import style from './card__content.module.scss';
+import style from './card-content-main.module.scss';
 
 const CardContentMain = () => {
   const [monthSelectorState, setMonthSelectorState] = useMonthSelector();
@@ -35,9 +35,9 @@ const CardContentMain = () => {
   }, []);
 
   return (
-    <div className={style.card__content}>
-      <div className={style.card__content_ads_row_gap}>
-        <div className={style.card__content__donation}>
+    <div className={style['card-content-main']}>
+      <div className={style['card-content-main--row-gap']}>
+        <div className={style['card-content-main__donation']}>
           <AmountInput
             label={t('canDonate')}
             value={amountString}

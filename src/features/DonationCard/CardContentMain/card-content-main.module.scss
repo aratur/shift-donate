@@ -1,6 +1,6 @@
 @use '../../../sass/utils/' as u;
 
-.card__content {
+.card-content-main {
   display: flex;
   flex-direction: column;
   row-gap: 2rem;
@@ -11,7 +11,7 @@
     padding-bottom: 2rem;
   }
 
-  .card__content_ads_row_gap {
+  .card-content-main--row-gap {
     display: flex;
     flex-direction: column;
     row-gap: 2.5rem;
@@ -20,15 +20,15 @@
       // 1.5rem is the existing padding on the summary
       row-gap: calc(2rem - 1.5rem);
     }
+  }
 
-    .card__content__donation {
-      display: flex;
-      flex-direction: column;
-      row-gap: 1rem;
-      @include u.media-desktop {
-        flex-direction: row;
-        justify-content: space-between;
-      }
+  .card-content-main__donation {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    @include u.media-desktop {
+      flex-direction: row;
+      justify-content: space-between;
     }
   }
 }

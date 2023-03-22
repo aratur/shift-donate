@@ -1,5 +1,5 @@
 @use '../../sass/utils/' as u;
-.amount_input__label {
+.amount-input__label {
   display: flex;
   flex-direction: column;
   // font-family: 'Work Sans', sans-serif; is set on body
@@ -8,7 +8,7 @@
   line-height: 18px;
   color: #4d6475;
 
-  .amount_input__input {
+  .amount-input__input {
     @include u.media-desktop {
       max-width: 16rem;
     }

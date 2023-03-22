@@ -1,6 +1,6 @@
 @use '../../../sass/utils/' as u;
 
-.btn_close {
+.btn-close {
   position: absolute;
   right: 0.5rem;
   top: 0.5rem;
@@ -13,7 +13,6 @@
   background-color: transparent;
   width: 2.5rem;
   height: 2.5rem;
-
   cursor: pointer;
 
   &:hover {

@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
-import style from './btn__default.module.scss';
+import style from './btn.module.scss';
 
 interface Props extends React.ComponentPropsWithoutRef<'button'> {
   variant: 'dark' | 'light';
@@ -8,7 +8,7 @@ interface Props extends React.ComponentPropsWithoutRef<'button'> {
 const ButtonDefault = (props: Props) => {
   const { className, variant, children, ...otherProps } = props;
   const buttonKindStyle =
-    variant === 'dark' ? style.btn__dark : style.btn__light;
+    variant === 'dark' ? style['btn--dark'] : style['btn--light'];
   return (
     <button
       className={[style.btn, buttonKindStyle, className].join(' ')}

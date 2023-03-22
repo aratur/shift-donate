@@ -1,6 +1,6 @@
 @use '../../../sass/utils/' as u;
 
-.card {
+.card-container {
   position: relative;
   max-width: 600px;
   margin: 0 auto;
@@ -21,7 +21,7 @@
 }
 
 // if needed somewhere else at some point then move it outside
-.box_shadow {
+.card-container--box-shadow {
   box-shadow: 0px 1rem 32px rgba(30, 42, 50, 0.08);
   border-radius: 5px;
 }

@@ -4,7 +4,7 @@ import style from './navbar.module.scss';
 
 const Navbar = () => (
   <header className={style.navbar}>
-    <img src={logo} alt="Natur.ally logo" />
+    <img className={style.navbar__img} src={logo} alt="Natur.ally logo" />
   </header>
 );
 

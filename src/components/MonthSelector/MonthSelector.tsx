@@ -27,29 +27,29 @@ const MonthSelector = (props: MonthSelectorProps) => {
   };
 
   return (
-    <div className={style.month_selector}>
-      <div className={style.month_selector__label}>{label}</div>
-      <div className={style.date_switcher}>
+    <div className={style['month-selector']}>
+      <div className={style['month-selector__label']}>{label}</div>
+      <div className={style['month-selector__container']}>
         <button
           type="button"
-          className={style.date_switcher__button}
+          className={style['month-selector__button']}
           onClick={handleClickedLeft}
         >
           <img src={chevronLeft} alt="left" />
         </button>
 
-        <div className={style.date_switcher__date}>
-          <div className={style.date_switcher__date__month}>
+        <div className={style['month-selector__date']}>
+          <div className={style['month-selector__date__month']}>
             {monthState.monthName}
           </div>
-          <div className={style.date_switcher__date__year}>
+          <div className={style['month-selector__date__year']}>
             {monthState.year}
           </div>
         </div>
 
         <button
           type="button"
-          className={style.date_switcher__button}
+          className={style['month-selector__button']}
           onClick={handleClickedRight}
         >
           <img src={chevronRight} alt="right" />

@@ -30,10 +30,10 @@ const AmountInput = (props: AmountInputProps) => {
   };
 
   return (
-    <label className={style.amount_input__label} htmlFor="donation_amount">
+    <label className={style['amount-input__label']} htmlFor="donation_amount">
       {label}
       <input
-        className={style.amount_input__input}
+        className={style['amount-input__input']}
         type="text"
         inputMode="decimal"
         name="donation_amount"

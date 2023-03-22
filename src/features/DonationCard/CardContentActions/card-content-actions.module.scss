@@ -1,11 +1,11 @@
 @use '../../../sass/utils/' as u;
 
-.card__content__actions {
+.card-content-actions {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 
-  .card__context__responsive_button {
+  .card-content-actions--responsive {
     display: none;
     @include u.media-desktop {
       display: block;

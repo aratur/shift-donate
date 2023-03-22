@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { close } from '../../../assets';
 import ButtonClose from '../../../components/UI/ButtonClose';
 import ButtonDefault from '../../../components/UI/ButtonDefault';
-import style from './card__content__actions.module.scss';
+import style from './card-content-actions.module.scss';
 
 type CardContentActionsProps = {
   handleCancel: () => void;
@@ -14,12 +14,12 @@ const CardContentActions = (props: CardContentActionsProps) => {
   const { handleCancel, handleContinue } = props;
   const { t } = useTranslation('common');
   return (
-    <div className={style.card__content__actions}>
+    <div className={style['card-content-actions']}>
       <ButtonClose onClick={handleCancel}>
         <img src={close} alt={t('cancel') || 'cancel'} />
       </ButtonClose>
       <ButtonDefault
-        className={style.card__context__responsive_button}
+        className={style['card-content-actions--responsive']}
         variant="light"
         onClick={handleCancel}
       >
