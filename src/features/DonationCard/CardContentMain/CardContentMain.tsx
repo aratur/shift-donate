@@ -1,11 +1,8 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import CardContentActions from '../CardContentActions';
 import CardContentSummary from '../CardContentSummary';
-import AmountInput, {
-  AmountFormatter,
-  useAmountInput,
-} from '../../../components/AmountInput';
+import AmountInput, { AmountFormatter } from '../../../components/AmountInput';
 import MonthSelector, {
   useMonthSelector,
 } from '../../../components/MonthSelector';
@@ -14,13 +11,20 @@ import style from './card__content.module.scss';
 const CardContentMain = () => {
   const [monthSelectorState, setMonthSelectorState] = useMonthSelector();
   const { monthName, noOfMonths, year } = monthSelectorState;
-  const { amount, amountInputState } = useAmountInput();
+  const [amountString, setAmountString] = useState<string>('');
+
+  const amountNumber = AmountFormatter.convertFromStringToNumber(amountString);
+
   const { t } = useTranslation('donationCard');
 
   // format total for rendering in content summary
-  const total = AmountFormatter.formatAmountInText(amount * noOfMonths);
+  const total = AmountFormatter.formatAmountInText(amountNumber * noOfMonths);
   // format amount for rendering in content summary
-  const displayAmount = AmountFormatter.formatAmountInText(amount);
+  const displayAmount = AmountFormatter.formatAmountInText(amountNumber);
+
+  const handleAmountChange = useCallback((value: string) => {
+    setAmountString(value);
+  }, []);
 
   const handleContinue = useCallback(() => {
     // console.log('Continue');
@@ -36,7 +40,8 @@ const CardContentMain = () => {
         <div className={style.card__content__donation}>
           <AmountInput
             label={t('canDonate')}
-            useAmountInputState={amountInputState}
+            value={amountString}
+            onChange={handleAmountChange}
           />
           <MonthSelector
             label={t('everyMonthUntil')}

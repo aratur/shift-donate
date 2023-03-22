@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import style from './amount_input.module.scss';
 import AmountFormatter from './AmountFormatters';
-import { UseAmountInputState } from './useAmountInput';
 
 type AmountInputProps = {
   label: string;
-  useAmountInputState: UseAmountInputState;
+  value: string;
+  onChange: (value: string) => void;
 };
 
 const AmountInput = (props: AmountInputProps) => {
-  const { label, useAmountInputState } = props;
-  const [amount, setAmount] = useAmountInputState;
+  const { label, value: amount, onChange: setAmount } = props;
+
   const [formatter, setFormatter] = useState(
     () => AmountFormatter.formatAmountOutOfFocus
   );
