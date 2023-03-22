@@ -23,11 +23,11 @@ const CardContentMain = () => {
   const displayAmount = AmountFormatter.formatAmountInText(amount);
 
   const handleContinue = useCallback(() => {
-    console.log('Continue');
+    // console.log('Continue');
   }, []);
 
   const handleCancel = useCallback(() => {
-    console.log('Cancel');
+    // console.log('Cancel');
   }, []);
 
   return (

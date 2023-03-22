@@ -11,6 +11,7 @@ node_modules
 dist
 dist-ssr
 *.local
+.hintrc
 
 # Editor directories and files
 .vscode/*
@@ -24,6 +25,7 @@ dist-ssr
 *.sw?
 *.sketch
 *.fig
+
 
 # Avoid accidental XD upload if you convert the design file
 ###############################################
