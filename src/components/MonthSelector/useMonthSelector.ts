@@ -24,18 +24,15 @@ const initialDate = () => {
 const useMonthSelector = () => {
   const [date, setDate] = useState(initialDate());
 
-  performance.now();
   const noOfMonths = getNoOFMonthsBetween(new Date(), date);
   const monthName = getMonthName(date);
 
-  const changeDate = useCallback((value: Date) => {
+  const setOnlyFutureDates = useCallback((value: Date) => {
     const noOfMonth = getNoOFMonthsBetween(new Date(), value);
     if (noOfMonth >= 1) setDate(value);
   }, []);
 
-  performance.mark('end');
-
-  return { date, setDate: changeDate, noOfMonths, monthName };
+  return { date, setDate: setOnlyFutureDates, noOfMonths, monthName };
 };
 
 export default useMonthSelector;
