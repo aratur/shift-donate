@@ -6,7 +6,7 @@
   font-weight: 500;
   font-size: 14px;
   line-height: 18px;
-  color: #4d6475;
+  color: var(--clr-placeholder-font);
 
   .amount-input__input {
     @include u.media-desktop {

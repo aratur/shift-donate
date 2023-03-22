@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import style from './amount_input.module.scss';
+import style from './amount-input.module.scss';
 import AmountFormatter from './AmountFormatters';
 
 type AmountInputProps = {
@@ -22,11 +22,10 @@ const AmountInput = (props: AmountInputProps) => {
     const pattern = '^\\d{0,9}(\\.\\d{0,2})?$';
     const regex = new RegExp(pattern, 'g');
     if (!regex.test(inputValue)) {
-      setAmount(amount);
       return;
     }
 
-    setAmount(inputValue);
+    if (amount.localeCompare(inputValue) !== 0) setAmount(inputValue);
   };
 
   return (

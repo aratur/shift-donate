@@ -1,29 +1,27 @@
 import React from 'react';
 import { chevronLeft, chevronRight } from '../../assets';
-import style from './month_selector.module.scss';
-import MonthSelectorController from './MonthSelectorController';
-import MonthState from './MonthSelectorModel';
+import style from './month-selector.module.scss';
+import { getMonthName } from './useMonthSelector';
 
 type MonthSelectorProps = {
   label: string;
-  monthState: MonthState;
-  handleMonthChange: (newMonthState: MonthState) => void;
+  value: Date;
+  onChange: (value: Date) => void;
 };
 
 const MonthSelector = (props: MonthSelectorProps) => {
-  const { label, monthState, handleMonthChange } = props;
+  const { label, value: date, onChange } = props;
 
-  const createControllerFromProps = () =>
-    new MonthSelectorController(new Date(monthState.year, monthState.month));
-
-  const handleClickedLeft = () => {
-    const controller = createControllerFromProps();
-    handleMonthChange(controller.decrement());
+  const handleDecrement = () => {
+    const newDate = new Date(date);
+    newDate.setMonth(newDate.getMonth() - 1);
+    onChange(newDate);
   };
 
-  const handleClickedRight = () => {
-    const controller = createControllerFromProps();
-    handleMonthChange(controller.increment());
+  const handleIncrement = () => {
+    const newDate = new Date(date);
+    newDate.setMonth(newDate.getMonth() + 1);
+    onChange(newDate);
   };
 
   return (
@@ -33,24 +31,24 @@ const MonthSelector = (props: MonthSelectorProps) => {
         <button
           type="button"
           className={style['month-selector__button']}
-          onClick={handleClickedLeft}
+          onClick={handleDecrement}
         >
           <img src={chevronLeft} alt="left" />
         </button>
 
         <div className={style['month-selector__date']}>
           <div className={style['month-selector__date__month']}>
-            {monthState.monthName}
+            {getMonthName(date)}
           </div>
           <div className={style['month-selector__date__year']}>
-            {monthState.year}
+            {date.getFullYear()}
           </div>
         </div>
 
         <button
           type="button"
           className={style['month-selector__button']}
-          onClick={handleClickedRight}
+          onClick={handleIncrement}
         >
           <img src={chevronRight} alt="right" />
         </button>

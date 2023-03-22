@@ -9,8 +9,7 @@ import MonthSelector, {
 import style from './card-content-main.module.scss';
 
 const CardContentMain = () => {
-  const [monthSelectorState, setMonthSelectorState] = useMonthSelector();
-  const { monthName, noOfMonths, year } = monthSelectorState;
+  const { date, setDate, monthName, noOfMonths } = useMonthSelector();
   const [amountString, setAmountString] = useState<string>('');
 
   const amountNumber = AmountFormatter.convertFromStringToNumber(amountString);
@@ -45,14 +44,14 @@ const CardContentMain = () => {
           />
           <MonthSelector
             label={t('everyMonthUntil')}
-            monthState={monthSelectorState}
-            handleMonthChange={setMonthSelectorState}
+            onChange={setDate}
+            value={date}
           />
         </div>
         <CardContentSummary
           amount={displayAmount}
           total={total}
-          until={`${monthName} ${year}`}
+          until={`${monthName} ${date.getFullYear()}`}
         />
       </div>
       <CardContentActions
