@@ -36,11 +36,11 @@
     cursor: pointer;
     border-radius: 5px;
     transition: background-color 100ms ease-out;
-    &:is(:hover) {
-      background-color: #f3f5fe;
+    &:hover {
+      background-color: var(--clr-date-switcher-btn-hover);
     }
     &:active {
-      background: #e8eaf2;
+      background: var(--clr-date-switcher-btn-active);
     }
     img {
       width: 1.5rem;

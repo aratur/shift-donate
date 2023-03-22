@@ -1,18 +1,26 @@
-@use './colors' as *;
-
 :root {
   /* White */
-  --clr-primary-light: #{$clr-primary-light};
+  // navbar_bg, card_bg
+  --clr-primary-light: #fff;
   /* Midnight Purple */
-  --clr-primary-dark: #{$clr-primary-dark};
-
-  --clr-secondary-light: #{$clr-secondary-light};
+  --clr-primary-dark: #423c66;
+  // body_bg, info_box
+  --clr-secondary-light: #f4f8fa;
   /* Blue Gray */
-  --clr-secondary-dark: #{$clr-secondary-dark};
+  // Font total, font
+  --clr-secondary-dark: #1e2a32;
   /* Salmon */
-  --clr-contrast-light: #{$clr-contrast-light};
+  // card__header_bg
+  --clr-contrast-light: #ffdbcc;
   /* stroke */
-  --clr-border-light: #{$clr-border-light};
+  // card__content__summary & inputs border
+  --clr-border-light: #e9eef2;
   /* Purple Gray */
-  --clr-tertiary-dark: #{$clr-tertiary-dark};
+  --clr-tertiary-dark: #474a62;
+  --clr-btn-dark-hover: #645d93;
+  --clr-btn-dark-active: #241e47;
+  --clr-btn-light-hover: rgba(178, 167, 244, 0.1);
+  --clr-btn-light-active: rgba(178, 167, 244, 0.25);
+  --clr-date-switcher-btn-hover: #f3f5fe;
+  --clr-date-switcher-btn-active: #e8eaf2;
 }

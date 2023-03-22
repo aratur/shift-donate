@@ -24,10 +24,10 @@
   background: var(--clr-primary-dark);
   color: var(--clr-primary-light);
   &:hover {
-    background-color: #645d93;
+    background-color: var(--clr-btn-dark-hover);
   }
   &:active {
-    background-color: #241e47;
+    background-color: var(--clr-btn-dark-active);
   }
   transition: background-color 100ms;
 }
@@ -37,10 +37,10 @@
   color: var(--clr-tertiary-dark);
   border: 1px solid var(--clr-tertiary-dark);
   &:hover {
-    background-color: rgba(178, 167, 244, 0.1);
+    background-color: var(--clr-btn-light-hover);
   }
   &:active {
-    background: rgba(178, 167, 244, 0.25);
+    background: var(--clr-btn-light-active);
   }
   transition: background-color 100ms;
 }
