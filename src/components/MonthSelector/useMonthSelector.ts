@@ -1,5 +1,11 @@
 import React, { useCallback, useState } from 'react';
 
+/**
+ *
+ * @param startDate
+ * @param endDate
+ * @returns Number of months between dates
+ */
 export const getNoOFMonthsBetween = (
   startDate: Date,
   endDate: Date
@@ -15,14 +21,14 @@ export const getMonthName = (date: Date): string => {
   return new Intl.DateTimeFormat('en-US', { month: 'long' }).format(date);
 };
 
-const initialDate = () => {
+const getInitialDate = () => {
   const currentDate = new Date();
   currentDate.setMonth(currentDate.getMonth() + 1);
   return currentDate;
 };
 
-const useMonthSelector = () => {
-  const [date, setDate] = useState(initialDate());
+const useMonthSelector = (initialDate?: Date) => {
+  const [date, setDate] = useState(initialDate || getInitialDate());
 
   const noOfMonths = getNoOFMonthsBetween(new Date(), date);
   const monthName = getMonthName(date);

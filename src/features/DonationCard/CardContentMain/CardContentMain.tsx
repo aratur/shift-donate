@@ -8,7 +8,13 @@ import MonthSelector, {
 } from '../../../components/MonthSelector';
 import style from './card-content-main.module.scss';
 
-const CardContentMain = () => {
+type Props = {
+  handleContinue: () => void;
+  handleCancel: () => void;
+};
+
+const CardContentMain = (props: Props) => {
+  const { handleCancel, handleContinue } = props;
   const { date, setDate, monthName, noOfMonths } = useMonthSelector();
   const [amountString, setAmountString] = useState<string>('');
 
@@ -23,14 +29,6 @@ const CardContentMain = () => {
 
   const handleAmountChange = useCallback((value: string) => {
     setAmountString(value);
-  }, []);
-
-  const handleContinue = useCallback(() => {
-    // console.log('Continue');
-  }, []);
-
-  const handleCancel = useCallback(() => {
-    // console.log('Cancel');
   }, []);
 
   return (
