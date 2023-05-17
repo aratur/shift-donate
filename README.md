@@ -1,5 +1,7 @@
 # Donation Form - using Vite + TypeScript + React
 
+Form with custom components dealing with money input behavior and dates manipulation. Responsive and based on a Figma design. For internationalization React i18next framework was used in this project.
+
 ## Table of contents
 
 - [Overview](#overview)
@@ -27,8 +29,12 @@ Buttons
 ### Uses the following libraries:
 
 - [React](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
 - [SASS/SCSS](https://sass-lang.com/)
 - [Vite](https://vitejs.dev/)
+- [Vitest](https://vitest.dev/)
+- [React i18-next](https://www.npmjs.com/package/react-i18next)
+- [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
 
 ## Use
 
